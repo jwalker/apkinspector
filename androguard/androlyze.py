@@ -32,8 +32,7 @@ from diff import *
 
 import misc
 
-import IPython.ipapi
-from IPython.Shell import IPShellEmbed
+import IPython
 
 from cPickle import dumps, loads
 
@@ -66,7 +65,7 @@ def load_session(filename) :
     return loads( open(filename, "r").read() )
 
 def interact() :
-    ipshell = IPShellEmbed(banner="Androlyze version %s" % misc.ANDROLYZE_VERSION)
+    ipshell = IPython.emded(banner="Androlyze version %s" % misc.ANDROLYZE_VERSION)
     ipshell()
 
 def AnalyzeAPK(filename, raw=False) :
